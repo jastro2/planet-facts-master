@@ -1,0 +1,46 @@
+body {
+  background: url('/assets/background-stars.svg')#070724!important;
+  color: #fff!important;
+}
+
+h1 {
+  font-size: 80px!important;
+  font-family: 'Antonio', sans-serif;
+}
+
+.top-nav .nav-logo {
+  font-family: 'Antonio', sans-serif;
+}
+
+.top-nav ul {
+  font-family: 'League Spartan', sans-serif;
+}
+
+.planet-info {
+  font-family: 'League Spartan', sans-serif;;
+}
+
+.planet-info button {
+  background: transparent;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.light-border {
+  border: 1px solid #393950;
+}
+
+.active {
+  background: #419ebb!important;
+}
+
+.info-box h5 {
+  font-size: 11px;
+  font-family: 'League Spartan', sans-serif;
+  text-transform: uppercase;
+}
+
+.info-box h2 {
+  font-size: 40px;
+  font-family: 'Antonio', sans-serif;
+}

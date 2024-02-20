@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://unpkg.com/vue@3.4.9/dist/vue.global.js" defer></script>
+    <script src="/app.js" type="module" defer></script>
+    <title>Frontend Mentor | Planets fact site</title>
+  </head>
+  <body>
+  <div class="top-nav">
+    <div class="container-fluid py-5 px-5">
+      <div class="row justify-content-around">
+        <div class="col-md-3 nav-logo">
+          <h3 class="text-uppercase">The Planets</h2>
+        </div>
+        <div class="col-md-9 d-flex justify-content-end">
+          <ul class="list-unstyled d-flex text-uppercase align-items-center mb-0">
+            <li>
+              <a href="/" class="nav-link">Mercury</a>
+            </li>
+            <li>
+              <a href="/" class="nav-link ms-5">Venus</a>
+            </li>
+            <li>
+              <a href="/" class="nav-link ms-5">Earth</a>
+            </li>
+            <li>
+              <a href="/" class="nav-link ms-5">Mars</a>
+            </li>
+            <li>
+              <a href="/" class="nav-link ms-5">Jupiter</a>
+            </li>
+            <li>
+              <a href="/" class="nav-link ms-5">Saturn</a>
+            </li>
+            <li>
+              <a href="/" class="nav-link ms-5">Uranus</a>
+            </li>
+            <li>
+              <a href="/" class="nav-link ms-5">Neptune</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="planet-info">
+    <div class="container pb-5">
+      <div class="row align-items-center">
+        <div class="col-md-7 col-12 text-center">
+          <img v-bind:src="'/assets/' + planetImage" alt="" id="planet-img">
+        </div>
+        <div class="offset-md-1 col-md-4 col-12 planet-info">
+          <h1 class="text-uppercase planet-name">{{ planetName }}</h1>
+          <p class="planet-summary">{{ planetSummary }}</p>
+          <p class="my-4">Source:<a class="ms-2 text-decoration-none">Wikipedia</a><i class="ms-2 bi bi-box-arrow-up-right text-white"></i></p>
+          <div class="d-flex flex-column">
+            <button :class="{active: btnASelected}"  @click="btnSelected('A')" class="planet-btn text-start text-white py-3 light-border" id="overview-btn"><span class="px-4">01</span>Overview</button>
+            <button :class="{active: btnBSelected}" @click="btnSelected('B')"  class="planet-btn my-3 text-start text-white py-3 light-border" id="internal-structure-btn"><span class="px-4">02</span>Internal Structure</button>
+            <button :class="{active: btnCSelected}" @click="btnSelected('C')"  class="planet-btn text-start text-white py-3 light-border" id="surface-geology-btn"><span class="px-4">03</span>Surface Geology</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-3 col-12">          
+          <div class="info-box p-4 light-border" id="rotation-time">
+            <h5>Rotation Time</h5>
+            <h2>{{ rotation }}</h2>
+          </div>
+        </div>
+        <div class="col-md-3 col-12">          
+          <div class="info-box p-4 light-border" id="revolution-time">
+            <h5>Revolution Time</h5>
+            <h2>{{ revolution }}</h2>
+          </div>
+        </div>
+        <div class="col-md-3 col-12">          
+          <div class="info-box p-4 light-border" id="radius">
+            <h5>Radius</h5>
+            <h2>{{ radius }}</h2>
+          </div>
+        </div>
+        <div class="col-md-3 col-12">   
+          <div class="info-box p-4 light-border" id="average-temp">
+            <h5>Average Temp</h5>
+            <h2>{{ temperature }}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
